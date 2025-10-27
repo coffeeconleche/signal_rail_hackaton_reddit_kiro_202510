@@ -2,9 +2,26 @@ import { useCallback, useEffect, useState } from 'react';
 import type { ClearDispatchResponse, DispatchResponse, InitResponse, ResetCooldownResponse, SetSpeedResponse } from '../../shared/types/signal';
 
 const fetchJson = async <T>(input: RequestInfo, init?: RequestInit): Promise<T> => {
-  const res = await fetch(input, init);
+  const headers = new Headers(init?.headers ?? undefined);
+  const requestInit: RequestInit = {
+    credentials: 'include',
+    ...init,
+    headers,
+  };
+  const res = await fetch(input, requestInit);
   const text = await res.text();
-  const payload = text ? (JSON.parse(text) as unknown) : null;
+  let payload: unknown = null;
+  if (text) {
+    try {
+      payload = JSON.parse(text) as unknown;
+    } catch (error) {
+      const snippet = text.length > 120 ? `${text.slice(0, 117)}...` : text;
+      const fallbackMessage = res.ok
+        ? 'The server returned an unexpected response.'
+        : `Request failed (${res.status}).`;
+      throw new Error(`${fallbackMessage} ${snippet ? `Details: ${snippet}` : ''}`.trim());
+    }
+  }
   if (!res.ok) {
     const message =
       payload && typeof payload === 'object' && payload && 'message' in payload

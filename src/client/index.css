@@ -1,1 +1,51 @@
 @import 'tailwindcss';
+
+@layer utilities {
+  @keyframes orbit-slow {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(32px, -20px, 0) scale(1.05);
+    }
+    100% {
+      transform: translate3d(-24px, 18px, 0) scale(0.98);
+    }
+  }
+
+  @keyframes orbit-slower {
+    0% {
+      transform: translate3d(-10px, 16px, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(24px, -12px, 0) scale(1.1);
+    }
+    100% {
+      transform: translate3d(-18px, -24px, 0) scale(0.95);
+    }
+  }
+
+  @keyframes drift-slower {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+    50% {
+      transform: translate3d(-40px, 12px, 0) rotate(6deg) scale(1.05);
+    }
+    100% {
+      transform: translate3d(30px, -20px, 0) rotate(-4deg) scale(0.97);
+    }
+  }
+
+  .animate-orbit-slow {
+    animation: orbit-slow 24s ease-in-out infinite alternate;
+  }
+
+  .animate-orbit-slower {
+    animation: orbit-slower 36s ease-in-out infinite alternate;
+  }
+
+  .animate-drift-slower {
+    animation: drift-slower 42s ease-in-out infinite alternate;
+  }
+}
