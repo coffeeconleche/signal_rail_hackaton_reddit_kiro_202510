@@ -60,12 +60,27 @@ const progressObjectives = (
         const status = progress >= objective.target ? 'completed' : 'active';
         return { ...objective, progress, status };
       }
+      case 'objective-glacier-link': {
+        const deliveries = relevantStats.reduce((sum, stat) => sum + stat.deliveries, 0);
+        const progress = deliveries;
+        const status = progress >= objective.target ? 'completed' : 'active';
+        return { ...objective, progress, status };
+      }
       case 'objective-ember-output': {
         const avgCongestion = relevantStats.length
           ? relevantStats.reduce((sum, stat) => sum + stat.congestionScore, 0) / relevantStats.length
           : 0;
         const shouldProgress = avgCongestion < 2.0;
         const progress = shouldProgress ? Math.min(objective.target, objective.progress + 15) : objective.progress;
+        const status = progress >= objective.target ? 'completed' : 'active';
+        return { ...objective, progress, status };
+      }
+      case 'objective-junction-flow': {
+        const avgCongestion = relevantStats.length
+          ? relevantStats.reduce((sum, stat) => sum + stat.congestionScore, 0) / relevantStats.length
+          : 0;
+        const shouldProgress = avgCongestion < 1.5;
+        const progress = shouldProgress ? Math.min(objective.target, objective.progress + 12) : objective.progress;
         const status = progress >= objective.target ? 'completed' : 'active';
         return { ...objective, progress, status };
       }
