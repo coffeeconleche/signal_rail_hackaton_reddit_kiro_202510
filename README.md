@@ -68,6 +68,17 @@ We are targeting a **soft reset** model: each season snapshots the previous netw
 3. Build the season rollover flow plus an archived timeline viewer.
 4. Integrate Kiro workflows (prompt generation, weekly summaries) before submission.
 
+## Kiro-powered workflow
+
+This project keeps Kiro enabled throughout development:
+
+- **`.kiro/hooks/client-readme-updater.kiro.hook`** prompts the team to refresh this README whenever client code changes, ensuring the public app listing on [developers.reddit.com](https://developers.reddit.com/apps/signal-stack) always reflects the latest gameplay.
+- **`devvit-fetch-guide.kiro.hook`** watches for new fetch calls and reminds us of Devvit’s allow-list and review process so external API integrations stay compliant.
+- **`splash-screen-generator.kiro.hook`** kicks in when assets change, nudging us to produce updated splash-screen copy/art that fits Reddit’s feed guidelines.
+- **`template-cleanup-hook.kiro.hook`** detects major edits to the starter project and offers automated cleanup of template code, keeping the repo focused on Signal Stack.
+
+Keeping the `.kiro/` directory versioned (and never ignored) lets the judges verify how Kiro improved our workflow: automated docs, compliance reminders, and guardrails for polish.
+
 ## Compliance checklist
 
 - No Reddit IP is used; all art assets are bespoke (`assets/signal-stack-*.png`).
