@@ -28,6 +28,18 @@ Useful scripts:
 - Cooldowns remain in real seconds so you can still rehearse the pacing loop without waiting half an hour.
 - Use the in-app **Clear dispatch log (debug)** button or run `./scripts/clear_dispatches.sh` (starts `npm run dev` with `CLEAR_DISPATCH_LOG=1`; stop it with `Ctrl+C` after the playtest boots, then relaunch normally).
 
+## Gameplay overview
+
+1. **Landing menu** – Open the playtest link and tap **Play**. (Use the **Tutorial** button if you want an in-post walkthrough first.)
+2. **Scan the rail map** – The left pane shows the shared network with animated trains, congestion heatmap bubbles, and active incident tags. Everyone sees the same live state.
+3. **Dispatch a train** – On the **Dispatch** tab, pick a `From` and `To` station and hit **Dispatch shared train**. Congestion, events, and route length set the ETA. A cooldown prevents immediate requeues.
+4. **Watch the log** – The **History** tab lists every community run with status, dispatcher, slowdown factor, and arrival times. Your dispatch will appear here in real time.
+5. **Review station load** – The **Stations** tab ranks congestion, deliveries, and delays so you can decide where to route the next train.
+6. **Track objectives** – The **Objectives** tab shows seasonal goals, including progress bars for network deliveries, keeping Cinder Crossing clear, and reaching Glacier Run.
+7. **Handle incidents** – When the **Alerts** tab lists an operational alert, expect affected stations to apply slowdown multipliers until the timer expires.
+
+
+
 ## Repository layout
 
 ```
