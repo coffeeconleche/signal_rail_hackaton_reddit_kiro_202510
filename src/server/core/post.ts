@@ -12,9 +12,9 @@ export const createPost = async () => {
       appDisplayName: 'Signal Stack',
       backgroundUri: 'signal-stack-splash.png',
       buttonLabel: 'Enter Dispatch Console',
-      description: 'Coordinate trains with the community before the season ends.',
+      description: '**Coordinate trains with the community before the season ends.Coordinate trains with the community before the season ends.**',
       entry: 'default',
-      heading: 'Keep the network flowing',
+      heading: 'Keep the network flowing.',
       appIconUri: 'signal-stack-icon.png',
     },
     postData: {

@@ -314,7 +314,7 @@ const MainMenu = ({
     <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-6 px-6 pb-16 text-center text-black">
       <div className="flex flex-col gap-4 sm:flex-row">
         <button
-          className="w-full rounded-2xl border border-amber-300/70 bg-amber-400/50 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-amber-900 transition hover:border-amber-400 hover:bg-amber-400/70 sm:w-44"
+          className="w-full rounded-2xl border border-amber-300 bg-amber-400 px-8 py-3 text-sm font-semibold uppercase tracking-wide text-amber-950 transition hover:border-amber-400 hover:bg-amber-500 sm:w-44"
           onClick={onPlay}
         >
           Play
@@ -330,10 +330,12 @@ const MainMenu = ({
         <span className="rounded-full border border-slate-400/60 bg-white/70 px-4 py-1 uppercase tracking-[0.35em]">
           Seasonal Dispatch Challenge
         </span>
-        <p>
-          Coordinate trains, dodge network incidents, and push the community line forward before the season resets.
-        </p>
-        <p>Pro tip: the console shines on desktop, but playtest builds work on mobile once deployed.</p>
+        <span className="rounded-full border border-slate-400/60 bg-white/80 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-700">
+          Coordinate trains, dodge network incidents, and push the community line forward before the season ends.
+        </span>
+        <span className="rounded-full border border-slate-400/60 bg-white/80 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-700">
+          Pro tip: the console shines on desktop.
+        </span>
       </div>
     </div>
   </div>
