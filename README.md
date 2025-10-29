@@ -79,6 +79,10 @@ This project keeps Kiro enabled throughout development:
 
 Keeping the `.kiro/` directory versioned (and never ignored) lets the judges verify how Kiro improved our workflow: automated docs, compliance reminders, and guardrails for polish.
 
+### Development video
+
+Watch how Kiro helped develop this game: [Signal Stack Development with Kiro](https://www.youtube.com/watch?v=KzuU3sLUGa8)
+
 ## Compliance checklist
 
 - No Reddit IP is used; all art assets are bespoke (`assets/signal-stack-*.png`).
